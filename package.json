@@ -1,0 +1,24 @@
+{
+  "name": "jeuxolympiquesjs",
+  "version": "1.0.0",
+  "description": "API REST pour les JO.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexisCabrol/jeuxolympiquesjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexisCabrol/jeuxolympiquesjs/issues"
+  },
+  "homepage": "https://github.com/AlexisCabrol/jeuxolympiquesjs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.10.12"
+  }
+}
