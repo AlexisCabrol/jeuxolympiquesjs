@@ -7,7 +7,8 @@ const sportscontroller = new SportsController();
 
 // ROUTE GET
 router.get('/sports', async (req, res) => {
-    sportscontroller.getAllSports(req, res);
+    const sports = await sportscontroller.getAllSports();
+    res.render('sport', { sports: sports });
 });
 
 router.get('/sports/:sportId', async (req, res) => {
@@ -21,6 +22,7 @@ router.get('/sports/:sportId/athletes', async (req, res) => {
 // ROUTE POST
 router.post('/sports', async (req, res) => {
     sportscontroller.create(req, res);
+    res.redirect('/sports');
 });
 
 router.post('/sports/:sportId/athletes/:athletesId', async (req, res) => {

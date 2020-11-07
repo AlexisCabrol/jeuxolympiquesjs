@@ -23,7 +23,8 @@ class SportsService {
      * Permet la récupération de tous les sports
      */
     async getAllSports(){
-        return await Sport.find({});
+       const sports = await Sport.find({});
+       return sports;
     }
 }
 
