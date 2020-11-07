@@ -8,7 +8,7 @@ class AthletesService {
      */
     async creationAthlete(req) {
         const paramAthelete = req.body;
-        const athlete = new Athlete({
+        const athlete = new Athletes({
             firstName: paramAthelete.firstName,
             lastName: paramAthelete.lastName,
             gender: paramAthelete.gender,

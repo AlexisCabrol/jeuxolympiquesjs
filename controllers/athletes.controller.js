@@ -17,7 +17,6 @@ class AthletesController {
      */
     async creationAthlete(req, res) {
         await this.athletesService.creationAthlete(req);
-        res.redirect('/api/sports');
     }
 
     /**
@@ -26,8 +25,7 @@ class AthletesController {
      * @param {res} res la résultat.
      */
     async getListeDesAthletes(req, res) {
-        const athletes = await this.athletesService.getListeDesAthletes();
-        res.render('athletes', { athletes });
+        return await this.athletesService.getListeDesAthletes();
     }
 }
 
