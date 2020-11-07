@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AlexisCabrol/jeuxolympiquesjs#readme",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "mongoose": "^5.10.12",

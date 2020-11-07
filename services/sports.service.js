@@ -5,7 +5,7 @@ class SportsService {
 
     /**
      * 
-     * @param {*} sport 
+     * @param {sport} sport l'objet json avec les données du nouveau sport
      *  Body JSON avec les informations du nouveau sport
      *  Insert le nouveau sport dans la base de données MongoDB
      */

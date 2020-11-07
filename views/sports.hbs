@@ -1,0 +1,22 @@
+<h2>Tous les sports</h2>
+
+<div>
+    <style type="text/css">
+.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #a9a9a9;border-collapse: collapse;}
+.tftable th {font-size:12px;background-color:#b8b8b8;border-width: 1px;padding: 8px;border-style: solid;border-color: #a9a9a9;text-align:left;}
+.tftable tr {background-color:#ffffff;}
+.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #a9a9a9;}
+.tftable tr:hover {background-color:#ffff99;}
+</style>
+
+<table class="tftable" border="1">
+<tr><th>Sports</th><th>Athletes</th></tr>
+{{#each sports}}
+<tr><td>{{name}}</td><td>{{athletes.length()}}</td></tr>
+{{/each}}
+</table>
+
+
+
+
+</div>

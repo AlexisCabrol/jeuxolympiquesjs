@@ -7,8 +7,8 @@ class SportsController {
 
     /**
      * 
-     * @param {*} req 
-     * @param {*} res 
+     * @param {req} req la requête
+     * @param {res} res le resultat
      * Appel du service pour l'ajout en BDD du sport et redirection vers
      * la page centrale
      */
@@ -21,13 +21,13 @@ class SportsController {
 
     /**
      * 
-     * @param {*} req 
-     * @param {*} res 
+     * @param {req} req la requête
+     * @param {res} res le resultat
      * Récupération de tout les sports et affichage de la page centrale
      */
     async getAllSports(req, res){
         const sports = await this.sportsService.getAllSports();
-        res.render('/sports');
+        res.render('/sports', { sports });
     }
 }
 
