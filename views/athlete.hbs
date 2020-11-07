@@ -1,0 +1,24 @@
+<a href="/athletes/new">Ajout d'un athlète</a>
+<h1>Liste des athlètes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Genre</th>
+                <th>Pays</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each listeAthletes}}
+                <tr>
+                    <td>{{firstName}}</td>
+                    <td>{{lastName}}</td>
+                    <td>{{gender}}</td>
+                    <td>{{country}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+ 
+</div>
