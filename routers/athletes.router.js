@@ -23,19 +23,10 @@ router.get('/athletes/:athleteId/sports', async (req, res) => {
     res.render('liste-sport-par-athlete', { listeSports: listeSports});
 });
 
-router.get('/countries/:country/athletes', async (req, res) => {
-
-});
-
 // ROUTE POST
 router.post('/athletes', async (req, res) => {
     athletesController.creationAthlete(req, res);
     res.redirect('/athletes');
-});
-
-// ROUTE PUT
-router.put('/athletes/:athleteId', async (req, res) => {
-
 });
 
 // ROUTE DELETE
