@@ -1,31 +1,18 @@
 <h1>Liste des sports</h1>
-<<<<<<< HEAD
-
-<table class="tftable" border="1">
-
-<thead>
-    <tr>
-        <th>Sports</th>
-        <th>Ajout athletes</th>
-    </tr>
-</thead>
-<tbody>
-    {{#each sports}}
-        <tr>
-            <td>{{name}}</td>
-            <td><a href="/sports/{{id}}/athletes">Ajout d'un athlète</a></td>
-=======
 <table class="table">
     <thead>
         <tr>
             <th>Sports</th>
->>>>>>> e706abfcb2503b91341e7d49a0d28ed6693785c9
+=======
+            <th>Actions</th>
+>>>>>>> 81f20916286169f2270bcae9dc44527517a51cf7
         </tr>
     </thead>
     <tbody>
         {{#each sports}}
             <tr>
                 <td>{{name}}</td>
+                <td><a href="/sports/{{id}}/athletes">Voir athlètes</a></td>
             </tr>
         {{/each}}
     </tbody>

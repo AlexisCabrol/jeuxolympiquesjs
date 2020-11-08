@@ -23,6 +23,10 @@ router.get('/sports/:sportId/athletes', async (req, res) => {
     res.render('athlete-to-sport', { listeAthletes: listeAthletes});
 });
 
+router.get('/sports/add', async(req, res) => {
+    res.render('sports-add');
+})
+
 // ROUTE POST
 router.post('/sports', async (req, res) => {
     sportscontroller.create(req, res);
