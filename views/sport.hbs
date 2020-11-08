@@ -12,13 +12,14 @@
 <thead>
     <tr>
         <th>Sports</th>
-        <th>Athletes</th>
+        <th>Ajout athletes</th>
     </tr>
 </thead>
 <tbody>
     {{#each sports}}
         <tr>
             <td>{{name}}</td>
+            <td><a href="/sports/{{id}}/athletes">Ajout d'un athlète</a></td>
         </tr>
     {{/each}}
 </tbody>

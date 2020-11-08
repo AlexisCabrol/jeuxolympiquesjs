@@ -1,8 +1,10 @@
 const sportsService = require('../services/sports.service');
+const AthletesService = require('../services/athletes.service');
 
 class SportsController {
     constructor(){
         this.sportsService = new sportsService();
+        this.athletesService = new AthletesService();
     }
 
     /**
@@ -25,6 +27,16 @@ class SportsController {
      */
     async getAllSports(req, res){
         return await this.sportsService.getAllSports();
+    }
+
+    async getAthleteToAdd(req, res){
+        const sportId = req.params.sportId;
+        const sport = await this.sportsService.getSportById(sportId);
+        if(sport){
+            return await this.athletesService.getListeDesAthletes();
+        } else {
+            return false;
+        }
     }
 }
 

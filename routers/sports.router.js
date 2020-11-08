@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-//On instancie notre controller
+//On instancie nos controllers
 const SportsController = require('../controllers/sports.controller');
 const sportscontroller = new SportsController();
+
+const AthletesController = require('../controllers/athletes.controller');
+const athletesController = new AthletesController();
 
 // ROUTE GET
 router.get('/sports', async (req, res) => {
@@ -16,7 +19,8 @@ router.get('/sports/:sportId', async (req, res) => {
 });
 
 router.get('/sports/:sportId/athletes', async (req, res) => {
-
+    const listeAthletes = await sportscontroller.getAthleteToAdd(req, res);
+    res.render('athlete-to-sport', { listeAthletes: listeAthletes});
 });
 
 // ROUTE POST

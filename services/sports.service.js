@@ -26,6 +26,10 @@ class SportsService {
        const sports = await Sport.find({});
        return sports;
     }
+
+    async getSportById(sportId){
+        return await Sport.findById(sportId);
+    }
 }
 
 module.exports = SportsService;
