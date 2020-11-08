@@ -10,7 +10,7 @@ const athleteSchema = new Schema({
     country: String,
     sports: [{
         type: ObjectId,
-        default: undefined
+        ref: 'sport'
     }]
 });
 module.exports = mongoose.model('athlete', athleteSchema);

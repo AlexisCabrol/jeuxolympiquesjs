@@ -7,7 +7,7 @@ const sportSchema = new Schema({
     name: String,
     athletes: [{
         type: ObjectId,
-        default: undefined
+        ref: 'athlete'
     }]
 });
 module.exports = mongoose.model('sport', sportSchema);

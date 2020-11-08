@@ -42,7 +42,7 @@ class SportsService {
 
     async getAthletesBySport(sportId){
         const listAthletes = await Sport.findById(sportId).populate("athletes");
-        return listAthletes;
+        return listAthletes.athletes;
     }
 }
 
