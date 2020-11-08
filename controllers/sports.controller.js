@@ -29,14 +29,9 @@ class SportsController {
         return await this.sportsService.getAllSports();
     }
 
-    async getAthleteToAdd(req, res){
+    async getAthleteFromSport(req, res){
         const sportId = req.params.sportId;
-        const sport = await this.sportsService.getSportById(sportId);
-        if(sport){
-            return await this.athletesService.getListeDesAthletes();
-        } else {
-            return false;
-        }
+        return await this.sportsService.getAthletesBySport(sportId);
     }
 
     async createAthleteToSport(req, res){

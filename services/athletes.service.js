@@ -32,7 +32,7 @@ class AthletesService {
      * @param {id} id 
      */
     async voirSportParAthlete(id) {
-        const listeSportsPourAtlhete = await Athletes.findById(id).populate('sports');
+        const listeSportsPourAtlhete = await wAthletes.findById(id).populate('sports');
         return listeSportsPourAtlhete;
     }
 }
