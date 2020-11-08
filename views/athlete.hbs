@@ -6,7 +6,7 @@
                 <th>Prénom</th>
                 <th>Genre</th>
                 <th>Pays</th>
-                <th>Action</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -16,11 +16,9 @@
                     <td>{{lastName}}</td>
                     <td>{{gender}}</td>
                     <td>{{country}}</td>
-                    <td><a href="/sports/add">Ajout dans un sport</a></td>
+                    <td><a class="btn btn-primary" href="/sports/add">Ajout dans un sport</a>
+                    <a class="btn btn-primary" href="/athletes/{{id}}/sports">Voir les sports</a></td>
                 </tr>
             {{/each}}
         </tbody>
     </table>
-<div style="margin-top: 20px">
-    <a href="/sports"><h2>Voir la liste des sports</h2></a>
-</div>

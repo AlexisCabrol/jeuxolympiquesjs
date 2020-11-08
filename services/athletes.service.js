@@ -26,6 +26,15 @@ class AthletesService {
         const athletes = await Athletes.find({});
         return athletes;
     }
+
+    /**
+     * Permet la récupération des sports pour un athlète qui a l'identifiant passé en paramètre.
+     * @param {id} id 
+     */
+    async voirSportParAthlete(id) {
+        const listeSportsPourAtlhete = await Athletes.findById(id).populate('sports');
+        return listeSportsPourAtlhete;
+    }
 }
 
 module.exports = AthletesService;

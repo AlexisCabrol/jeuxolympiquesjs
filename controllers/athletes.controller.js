@@ -27,6 +27,15 @@ class AthletesController {
     async getListeDesAthletes(req, res) {
         return await this.athletesService.getListeDesAthletes();
     }
+
+    /**
+     * Voir les sports de l'athlète passé en paramètre.
+     * @param {req} req 
+     * @param {res} res 
+     */
+    async voirSportParAthlete(req, res) {
+        return await this.athletesService.voirSportParAthlete(req.params.id) ;
+    }
 }
 
 module.exports = AthletesController;

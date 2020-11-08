@@ -19,7 +19,8 @@ router.get('/athletes/:athletesId', async (req, res) => {
 });
 
 router.get('/athletes/:athleteId/sports', async (req, res) => {
-
+    const listeSports = await athletesController.voirSportParAthlete(req, res);
+    res.render('liste-sport-par-athlete', { listeSports: listeSports});
 });
 
 router.get('/countries/:country/athletes', async (req, res) => {

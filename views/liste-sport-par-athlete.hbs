@@ -1,0 +1,12 @@
+<h1>Liste des sports pour l'athlète sélectionné</h1>
+    <table class="table">
+        <tbody>
+            {{#each listeSports}}
+                <tr>
+                    <td>{{name}}</td>
+                </tr>
+            {{else}}
+                <p style="margin-top: 20px">L'athlète n'appartient à aucun sport.</p>
+            {{/each}}
+        </tbody>
+    </table>

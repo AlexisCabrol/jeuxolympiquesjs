@@ -14,6 +14,10 @@ router.get('/sports', async (req, res) => {
     res.render('sport', { sports: sports });
 });
 
+router.get('/sports/new', async(req, res) => {
+    res.render('nouveau-sport');
+});
+
 router.get('/sports/:sportId', async (req, res) => {
 
 });
@@ -30,7 +34,7 @@ router.get('/sports/:sportId/addAthlete', async (req, res) => {
 
 router.get('/sports/add', async(req, res) => {
     res.render('sports-add');
-})
+});
 
 // ROUTE POST
 router.post('/sports', async (req, res) => {

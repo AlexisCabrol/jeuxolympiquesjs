@@ -1,4 +1,4 @@
-<h1>Liste des sports</h1>
+<h1>Liste des sports <a href="/sports/new">+</a></h1><br>
 <table class="table">
     <thead>
         <tr>
@@ -11,27 +11,10 @@
             <tr>
                 <td>{{name}}</td>
                 <td>
-                    <a href="/sports/{{id}}/athletes">Voir athlètes</a>
-                    <a href="/sports/{{id}}/addAthlete">Ajouter un athlète</a>
+                    <a href="/sports/{{id}}/athletes" class="btn btn-primary">Voir athlètes</a>
+                    <a href="/sports/{{id}}/addAthlete" class="btn btn-primary">Ajouter un athlète</a>
                 </td>
             </tr>
         {{/each}}
     </tbody>
 </table>
-
-<div style="margin-top: 20px">
-    <h2>Ajout d'un nouveau sport</h2>
-    <div class="container-fluid">
-        <form method="post" action="/sports">
-            <div class="form-group">
-                <label for="name">Nom</label>
-                <input name="name" type="text" class="form-control" id="name">
-            </div>
-            <button type="submit" class="btn btn-primary">Ajout</button>
-        </form>
-    </div>
-</div>
-
-<div style="margin-top: 20px">
-    <a href="/athletes"><h2>Voir la liste des athlètes</h2></a>
-</div>
