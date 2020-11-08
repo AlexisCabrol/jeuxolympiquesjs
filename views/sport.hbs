@@ -3,12 +3,14 @@
     <thead>
         <tr>
             <th>Sports</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         {{#each sports}}
             <tr>
                 <td>{{name}}</td>
+                <td><a href="/sports/{{id}}/athletes">Voir athlètes</a></td>
             </tr>
         {{/each}}
     </tbody>
