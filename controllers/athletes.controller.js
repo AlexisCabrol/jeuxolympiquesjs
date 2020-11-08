@@ -16,7 +16,7 @@ class AthletesController {
      * @param {res} res le résultat.
      */
     async creationAthlete(req, res) {
-        await this.athletesService.creationAthlete(req);
+        return await this.athletesService.creationAthlete(req);
     }
 
     /**

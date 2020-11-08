@@ -38,6 +38,20 @@ class SportsController {
             return false;
         }
     }
+
+    async createAthleteToSport(req, res){
+        const sportId = req.params.sportId;
+        const athlete = await this.athletesService.creationAthlete(req);
+        if(athlete){
+            this.sportsService.addAthleteToSport(sportId, athlete);
+        }
+    }
+
+    async getSportById(req, res){
+        const sportId = req.params.sportId;
+        const sport = await this.sportsService.getSportById(sportId);
+        return sport;
+    }
 }
 
 module.exports = SportsController;

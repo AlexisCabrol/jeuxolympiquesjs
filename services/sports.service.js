@@ -12,7 +12,7 @@ class SportsService {
     async create(sport){
         const newSport = new Sport({
             name: sport.name,
-            athletes: sport.athletes
+            athletes: []
         });
 
         await newSport.save();
@@ -30,6 +30,15 @@ class SportsService {
     async getSportById(sportId){
         return await Sport.findById(sportId);
     }
+
+    async addAthleteToSport(sportId, ahtlete){
+        const res = await Sport.findByIdAndUpdate(
+            sportId,
+            {$push: { athletes: ahtlete._id }},
+            {new: true, useFindAndModify: false}
+        )
+        return res;
+    };
 }
 
 module.exports = SportsService;

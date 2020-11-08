@@ -10,7 +10,10 @@
         {{#each sports}}
             <tr>
                 <td>{{name}}</td>
-                <td><a href="/sports/{{id}}/athletes">Voir athlètes</a></td>
+                <td>
+                    <a href="/sports/{{id}}/athletes">Voir athlètes</a>
+                    <a href="/sports/{{id}}/addAthlete">Ajouter un athlète</a>
+                </td>
             </tr>
         {{/each}}
     </tbody>

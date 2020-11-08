@@ -15,6 +15,7 @@ class AthletesService {
             country: paramAthelete.country,
         });
         await athlete.save();
+        return athlete;
     }
 
     /**
