@@ -37,6 +37,15 @@ class AthletesController {
         const athlete = await this.athletesService.chargerAthlete(req.params.athleteId);
         return athlete.sports;
     }
+
+    /**
+     * Méthode permettant de supprimer un athlète.
+     * @param {req} req 
+     * @param {res} res 
+     */
+    async supprimerAthlete(req, res) {
+        await this.athletesService.supprimerAthlete(req.params.athleteId);
+    }
 }
 
 module.exports = AthletesController;

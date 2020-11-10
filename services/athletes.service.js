@@ -35,6 +35,14 @@ class AthletesService {
         const listeSportsPourAtlhete = await Athletes.findById(id).populate("sports");
         return listeSportsPourAtlhete;
     }
+
+    /**
+     * Méthode permettant de supprimer un athlète.
+     * @param {id} id Identifiant de l'athlète concerné.
+     */
+    async supprimerAthlete(id) {
+        await Athletes.findByIdAndRemove(id);
+    }
 }
 
 module.exports = AthletesService;

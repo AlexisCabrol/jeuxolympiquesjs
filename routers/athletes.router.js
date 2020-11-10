@@ -23,15 +23,16 @@ router.get('/athletes/:athleteId/sports', async (req, res) => {
     res.render('liste-sport-par-athlete', { listeSports: listeSports});
 });
 
+router.get('/athletes/supprimer/:athleteId', async (req, res) => {
+    await athletesController.supprimerAthlete(req, res);
+    const listeAthletes = await athletesController.getListeDesAthletes();
+    res.render('athlete', { listeAthletes: listeAthletes, messageOk: "Traitement OK."});
+});
+
 // ROUTE POST
 router.post('/athletes', async (req, res) => {
     athletesController.creationAthlete(req, res);
     res.redirect('/athletes');
-});
-
-// ROUTE DELETE
-router.delete('/athletes/:athleteId', async (req, res) => {
-
 });
 
 module.exports = router;
