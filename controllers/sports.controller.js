@@ -48,8 +48,9 @@ class SportsController {
         const sportId = req.params.sportId;
         const athlete = await this.athletesService.creationAthlete(req);
         if(athlete){
-            this.sportsService.addAthleteToSport(sportId, athlete);
+            return this.sportsService.addAthleteToSport(sportId, athlete);
         }
+        return false;
     }
 
     /**
@@ -70,7 +71,7 @@ class SportsController {
      */
     async createAthleteToSport(req, res) {
         const athlete = await this.athletesService.chargerAthlete(req.body.athlete);
-        this.sportsService.addAthleteToSport(req.params.sportId, athlete);
+        return this.sportsService.addAthleteToSport(req.params.sportId, athlete);
     }
 }
 

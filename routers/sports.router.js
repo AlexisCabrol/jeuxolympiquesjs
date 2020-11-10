@@ -40,13 +40,23 @@ router.post('/sports', async (req, res) => {
 });
 
 router.post('/sport/:sportId/athlete', async (req, res) => {
-    sportscontroller.createNewAthleteToSport(req, res);
-    res.redirect('/sports');
+    const action = await sportscontroller.createAthleteNewToSport(req, res);
+    const sports = await sportscontroller.getAllSports();
+    if(action) {
+        res.render('sport', { sports: sports, messageOk: "Traitement OK." });
+    } else {
+        res.render('sport', { sports: sports, messageErreur: "Traitement échoué : veuillez réessayer."});
+    }
 });
 
 router.post('/sports/:sportId/addAthletes', async(req, res) => {
-    sportscontroller.createAthleteToSport(req, res);
-    res.redirect('/sports');
+    const action = await sportscontroller.createAthleteToSport(req, res);
+    const sports = await sportscontroller.getAllSports();
+    if(action) {
+        res.render('sport', { sports: sports, messageOk: "Traitement OK." });
+    } else {
+        res.render('sport', { sports: sports, messageErreur: "Traitement échoué : tentative d'insertion d'un doublon."});
+    }
 });
 
 // ROUTE PUT

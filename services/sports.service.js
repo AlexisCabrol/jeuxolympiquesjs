@@ -1,5 +1,6 @@
 const Sport = require("../models/sport");
 const Athlete = require("../models/athlete");
+const athlete = require("../models/athlete");
 
 class SportsService {
     constructor() {}
@@ -36,21 +37,25 @@ class SportsService {
      * Ajout d'un athlète dans un sport.
      * @param {sportId} sportId Identifiant du sport
      * @param {athlete} ahtlete Athlète visé
+     * @return true si la liaison n'existe pas et donc crée, false dans l'autre cas.
      */
-    async addAthleteToSport(sportId, ahtlete){
-        // On ajoute l'athlète dans l'objet sport.
-        const res = await Sport.findByIdAndUpdate(
-            sportId,
-            {$push: { athletes: ahtlete._id }},
-            {new: true, useFindAndModify: false});
-        
-        // On ajoute également le sport dans l'athlète.
-        const update = await Athlete.findByIdAndUpdate(
-            ahtlete._id,
-            {$push: { sports: sportId }},
-            {new: true, useFindAndModify: false});
-        return res;
-    };
+    async addAthleteToSport(sportId, athlete){
+        const liaisonExisteDeja = await Sport.exists({ athletes: athlete._id});
+        if(!liaisonExisteDeja) {
+            // On ajoute l'athlète dans l'objet sport.
+            const res = await Sport.findByIdAndUpdate(
+                sportId,
+                {$push: { athletes: athlete._id }},
+                {new: true, useFindAndModify: false});
+            
+            // On ajoute également le sport dans l'athlète.
+            const update = await Athlete.findByIdAndUpdate(
+                athlete._id,
+                {$push: { sports: sportId }},
+                {new: true, useFindAndModify: false});
+        }
+        return !liaisonExisteDeja;
+    }
 
     async getAthletesBySport(sportId){
         const listAthletes = await Sport.findById(sportId).populate("athletes");
