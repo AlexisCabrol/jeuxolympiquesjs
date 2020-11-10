@@ -61,6 +61,14 @@ class SportsService {
         const listAthletes = await Sport.findById(sportId).populate("athletes");
         return listAthletes.athletes;
     }
+
+    /**
+     * Méthode permettant de supprimer un sport.
+     * @param {id} id Identifiant du sport concerné.
+     */
+    async supprimerSport(id) {
+        await Sport.findByIdAndRemove(id);
+    }
 }
 
 module.exports = SportsService;

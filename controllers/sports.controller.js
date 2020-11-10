@@ -73,6 +73,15 @@ class SportsController {
         const athlete = await this.athletesService.chargerAthlete(req.body.athlete);
         return this.sportsService.addAthleteToSport(req.params.sportId, athlete);
     }
+
+    /**
+     * Méthode permettant de supprimer un sport.
+     * @param {req} req 
+     * @param {res} res 
+     */
+    async supprimerSport(req, res) {
+        await this.sportsService.supprimerSport(req.params.sportId);
+    }
 }
 
 module.exports = SportsController;

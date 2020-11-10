@@ -33,6 +33,12 @@ router.get('/sports/add', async(req, res) => {
     res.render('sports-add');
 });
 
+router.get('/sports/supprimer/:sportId', async (req, res) => {
+    await sportscontroller.supprimerSport(req, res);
+    const listeSport = await sportscontroller.getAllSports();
+    res.render('sport', { sports: listeSport, messageOk: "Traitement OK."});
+});
+
 // ROUTE POST
 router.post('/sports', async (req, res) => {
     sportscontroller.create(req, res);
@@ -58,20 +64,5 @@ router.post('/sports/:sportId/addAthletes', async(req, res) => {
         res.render('sport', { sports: sports, messageErreur: "Traitement échoué : tentative d'insertion d'un doublon."});
     }
 });
-
-// ROUTE PUT
-router.put('/sports/:sportId', async (req, res) => {
-
-});
-
-// ROUTE DELETE
-router.delete('/sports/:sportId', async (req, res) => {
-
-});
-
-router.delete('/sports/:sportId/athletes/:athletesId', async (req, res) => {
-
-});
-
 
 module.exports = router;
