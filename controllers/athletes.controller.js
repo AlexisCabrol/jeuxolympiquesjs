@@ -34,7 +34,7 @@ class AthletesController {
      * @param {res} res 
      */
     async voirSportParAthlete(req, res) {
-        return await this.athletesService.voirSportParAthlete(req.params.id) ;
+        return await this.athletesService.voirSportParAthlete(req.params.athleteId) ;
     }
 }
 

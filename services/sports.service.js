@@ -1,4 +1,5 @@
 const Sport = require("../models/sport");
+const Athlete = require("../models/athlete");
 
 class SportsService {
     constructor() {}
@@ -31,12 +32,23 @@ class SportsService {
         return await Sport.findById(sportId);
     }
 
+    /**
+     * Ajout d'un athlète dans un sport.
+     * @param {sportId} sportId Identifiant du sport
+     * @param {athlete} ahtlete Athlète visé
+     */
     async addAthleteToSport(sportId, ahtlete){
+        // On ajoute l'athlète dans l'objet sport.
         const res = await Sport.findByIdAndUpdate(
             sportId,
             {$push: { athletes: ahtlete._id }},
-            {new: true, useFindAndModify: false}
-        )
+            {new: true, useFindAndModify: false});
+        
+        // On ajoute également le sport dans l'athlète.
+        const update = await Athlete.findByIdAndUpdate(
+            ahtlete._id,
+            {$push: { sports: sportId }},
+            {new: true, useFindAndModify: false});
         return res;
     };
 

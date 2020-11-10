@@ -1,4 +1,5 @@
-<h1>Liste des athlètes</h1><br>
+<h1>Liste des athlètes du sport sélectionné</h1><br>
+{{#if listeAthletes}}
 <table class="table">
     <thead>
         <tr>
@@ -20,3 +21,6 @@
     </tbody>
 </table>
 <br>
+{{else}}
+ <p>Le sport ne possède aucun athlète.</p>
+ {{/if}}

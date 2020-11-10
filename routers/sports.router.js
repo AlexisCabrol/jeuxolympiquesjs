@@ -18,10 +18,6 @@ router.get('/sports/new', async(req, res) => {
     res.render('nouveau-sport');
 });
 
-router.get('/sports/:sportId', async (req, res) => {
-
-});
-
 router.get('/sports/:sportId/athletes', async (req, res) => {
     const listeAthletes = await sportscontroller.getAthleteFromSport(req, res);
     res.render('athlete-from-sport', { listeAthletes: listeAthletes});
@@ -40,10 +36,6 @@ router.get('/sports/add', async(req, res) => {
 router.post('/sports', async (req, res) => {
     sportscontroller.create(req, res);
     res.redirect('/sports');
-});
-
-router.post('/sports/:sportId/athletes/:athletesId', async (req, res) => {
-
 });
 
 router.post('/sport/:sportId/athlete', async (req, res) => {
