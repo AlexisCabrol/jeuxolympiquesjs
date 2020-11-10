@@ -1,4 +1,5 @@
 const Athletes = require('../models/athlete');
+const Sport = require('../models/sport');
 
 class AthletesService {
 
@@ -42,6 +43,16 @@ class AthletesService {
      */
     async supprimerAthlete(id) {
         await Athletes.findByIdAndRemove(id);
+    }
+
+    /**
+     * Méthode permettant de supprimer un sport d'un athlète.
+     * @param {sportId} sportId identifiant du sport.
+     * @param {athleteId} athleteId identifiant de l'athlète.
+     */
+    async supprimerSportDunAthlete(sportId, athleteId) {
+        await Athletes.update({ _id: athleteId}, { $pullAll: { sports: [sportId] } } );
+        await Sport.update({ _id: sportId}, { $pullAll: { athletes: [athleteId] } } );
     }
 }
 
