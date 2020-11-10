@@ -1,6 +1,6 @@
 {{#with sport}}
 <h2>Inscription d'un nouvel athlète dans {{name}}</h2>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 50px;">
     <form method="post" action="/sport/{{id}}/athlete">
         <div class="form-group">
             <label for="firstName">Nom</label>
@@ -22,4 +22,13 @@
         <a href="/sports" class="btn btn-cancel">Retour</a>
     </form>
 </div>
-{{/with}}
+<h2 style="margin-bottom: 30px;">Ajout d'un athlète déjà existant dans {{name}}</h2>
+<form method="post" action="/sports/{{id}}/addAthletes">{{/with}}
+  <select name="athlete" id="athlete" style="width: 300px; margin-bottom: 30px;">
+    {{#each listeAthletes}}
+        <option value={{id}}>{{lastName}} {{firstName}}</option>
+    {{/each}}
+  </select><br>
+   <button type="submit" class="btn btn-primary">Valider l'inscription</button>
+<a href="/sports" class="btn btn-cancel">Retour</a>
+</form>

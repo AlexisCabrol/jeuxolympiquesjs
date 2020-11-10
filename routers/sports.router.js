@@ -25,7 +25,8 @@ router.get('/sports/:sportId/athletes', async (req, res) => {
 
 router.get('/sports/:sportId/addAthlete', async (req, res) => {
     const sport = await sportscontroller.getSportById(req, res);
-    res.render('nouvel-athlete-sport', { sport: sport });
+    const listeAthletes = await athletesController.getListeDesAthletes();
+    res.render('nouvel-athlete-sport', { sport: sport, listeAthletes: listeAthletes });
 });
 
 router.get('/sports/add', async(req, res) => {
@@ -39,6 +40,11 @@ router.post('/sports', async (req, res) => {
 });
 
 router.post('/sport/:sportId/athlete', async (req, res) => {
+    sportscontroller.createNewAthleteToSport(req, res);
+    res.redirect('/sports');
+});
+
+router.post('/sports/:sportId/addAthletes', async(req, res) => {
     sportscontroller.createAthleteToSport(req, res);
     res.redirect('/sports');
 });

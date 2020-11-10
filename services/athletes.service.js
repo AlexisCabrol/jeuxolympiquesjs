@@ -28,12 +28,12 @@ class AthletesService {
     }
 
     /**
-     * Permet la récupération des sports pour un athlète qui a l'identifiant passé en paramètre.
+     * Permet la récupération d'un athlète grâce a l'identifiant passé en paramètre.
      * @param {id} id 
      */
-    async voirSportParAthlete(id) {
+    async chargerAthlete(id) {
         const listeSportsPourAtlhete = await Athletes.findById(id).populate("sports");
-        return listeSportsPourAtlhete.sports;
+        return listeSportsPourAtlhete;
     }
 }
 
