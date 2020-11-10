@@ -1,4 +1,4 @@
-<h1>Liste des athlètes <a href="/athletes/new">+</a></h1><br>
+<h1>Liste des athlètes <a href="/api/athletes/new">+</a></h1><br>
     <table class="table">
         <thead>
             <tr>
@@ -16,8 +16,8 @@
                     <td>{{lastName}}</td>
                     <td>{{gender}}</td>
                     <td>{{country}}</td>
-                    <td><a class="btn btn-primary" href="/athletes/{{id}}/sports">Voir les sports</a>
-                    <a style="margin-left: 15px;" class="btn btn-primary" href="/athletes/supprimer/{{id}}">Supprimer</a></td>
+                    <td><a class="btn btn-primary" href="/api/athletes/{{id}}/sports">Voir les sports</a>
+                    <a style="margin-left: 15px;" class="btn btn-primary" href="/api/athletes/supprimer/{{id}}">Supprimer</a></td>
                 </tr>
             {{/each}}
         </tbody>

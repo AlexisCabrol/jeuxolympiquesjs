@@ -24,8 +24,8 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.use('/', sportsRouter);
-app.use('/', athletesRouter);
+app.use('/api/', sportsRouter);
+app.use('/api/', athletesRouter);
 
 // Gestion des templates
 app.set('view engine', 'hbs');

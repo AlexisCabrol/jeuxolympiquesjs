@@ -1,4 +1,4 @@
-<h1>Liste des sports <a href="/sports/new">+</a></h1><br>
+<h1>Liste des sports <a href="/api/sports/new">+</a></h1><br>
 <table class="table">
     <thead>
         <tr>
@@ -11,9 +11,9 @@
             <tr>
                 <td>{{name}}</td>
                 <td>
-                    <a href="/sports/{{id}}/athletes" class="btn btn-primary">Voir athlètes</a>
-                    <a style="margin-left: 15px;" href="/sports/{{id}}/addAthlete" class="btn btn-primary">Ajouter un athlète</a>
-                     <a style="margin-left: 15px;" class="btn btn-primary" href="/sports/supprimer/{{id}}">Supprimer</a>
+                    <a href="/api/sports/{{id}}/athletes" class="btn btn-primary">Voir athlètes</a>
+                    <a style="margin-left: 15px;" href="/api/sports/{{id}}/addAthlete" class="btn btn-primary">Ajouter un athlète</a>
+                     <a style="margin-left: 15px;" class="btn btn-primary" href="/api/sports/supprimer/{{id}}">Supprimer</a>
                 </td>
             </tr>
         {{/each}}
