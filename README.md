@@ -1,6 +1,8 @@
 # Jeux Olympiques JS
 
 Pour installer le projet sur votre environnement, veuillez respecter ces étapes :<br>
+- Il faut créer un fichier .env à la racine du projet puis renseigner une valeur qui a pour clé DB_URL. 
+- Exécuter les commandes ci-dessous :
         
         npm install
         npm start

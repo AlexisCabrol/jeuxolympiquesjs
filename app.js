@@ -3,6 +3,7 @@ const app = express();
 const logger = require('morgan');
 const connect = require('./database/mongodb');
 const path = require('path');
+require('dotenv').config();
 
 // MIDDLEWARES
 app.use(express.json());
