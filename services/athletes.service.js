@@ -25,6 +25,9 @@ class AthletesService {
      */
     async getListeDesAthletes() {
         const athletes = await Athletes.find({});
+        athletes.forEach(athlete => {
+            athlete.gender = athlete.gender === 'M' ? 'Homme' : 'Femme';
+        });
         return athletes;
     }
 
