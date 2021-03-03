@@ -20,12 +20,20 @@ const sportsRouter = require('./routers/sports.router');
 // Router pour les points /athletes
 const athletesRouter = require('./routers/athletes.router');
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
 app.use('/api/', sportsRouter);
 app.use('/api/', athletesRouter);
+
+app.get('/sports', (req,res) =>{
+    res.redirect('/api/sports');
+});
+
+app.get('/athletes', (req,res) =>{
+    res.redirect('/api/athletes');
+});
+
+app.get('/', (req, res) => {
+    res.redirect('/sports');
+});
 
 // Gestion des templates
 app.set('view engine', 'hbs');
