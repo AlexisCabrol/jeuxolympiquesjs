@@ -6,7 +6,10 @@ const ObjectId = Schema.ObjectId;
 const athleteSchema = new Schema({
     firstName: String,
     lastName: String,
-    gender: String,
+    gender: {
+        type: String,
+        enum: ['M', 'F']
+    },
     country: String,
     sports: [{
         type: ObjectId,
